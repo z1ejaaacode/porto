@@ -1,0 +1,156 @@
+
+/* ========================================= */
+/* CARD 7: SERVICES STYLING                  */
+/* ========================================= */
+.services-title { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  margin-bottom: 25px; 
+}
+
+.services-title h2 { 
+  font-size: 22px; 
+  color: #ffffff; 
+  font-family: 'bagus'; 
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  background: #252a31;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  border-color: #4a5568;
+}
+
+.service-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Membuat icon service jadi putih */
+  margin-bottom: 5px;
+}
+
+.service-item h3 {
+  font-size: 16px;
+  font-family: 'estetik';
+  color: #ffffff;
+}
+
+.service-item p {
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* ========================================= */
+/* CARD 8: CONTACT ME STYLING                */
+/* ========================================= */
+.contact-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.contact-title h2 {
+  font-size: 22px;
+  color: #ffffff;
+  font-family: 'bagus';
+}
+
+.contact-desc {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.contact-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+  font-family: 'estetik';
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.contact-btn .btn-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* Warna & Filter Tombol WA */
+.contact-btn.wa {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.contact-btn.wa .btn-icon {
+  filter: brightness(0) invert(1); /* Icon kontak jadi putih khusus di WA */
+}
+
+/* Warna & Filter Tombol IG */
+.contact-btn.ig {
+  background: #ffffff;
+  color: #000000;
+}
+
+.contact-btn.ig .btn-icon {
+  filter: none; /* Tetap hitam agar kontras dengan bg putih */
+}
+
+/* ========================================= */
+/* RESPONSIVE MOBILE (SERVICES & CONTACT)    */
+/* ========================================= */
+@media (max-width: 600px) {
+  /* Grid Service jadi 1 kolom */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-item {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Tombol kontak jadi tumpuk vertikal */
+  .contact-buttons {
+    flex-direction: column;
+  }
+  
+  .contact-btn {
+    width: 100%;
+  }
+}

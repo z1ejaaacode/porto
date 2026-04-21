@@ -1,0 +1,143 @@
+/* ========================================= */
+/* CORE SETTINGS - FORCED DARK MODE          */
+/* ========================================= */
+:root {
+  color-scheme: dark; /* Memberitahu browser untuk menggunakan UI dark secara default */
+}
+
+*, *::before, *::after { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  forced-color-adjust: none; /* Mematikan override warna otomatis dari sistem browser */
+}
+
+/* FONT SETUP */
+@font-face {
+  font-family: 'bagus';
+  src: url('font/bagus.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'estetik';
+  src: url('font/estetik.otf') format('opentype');
+  font-display: swap;
+}
+
+/* BODY - LOCKED THEME */
+body {
+  background: #0f0f0f !important; /* Paksa hitam pekat */
+  background: radial-gradient(circle at top, #1a1d23, #0f0f0f) !important;
+  font-family: 'bagus', sans-serif;
+  color: #ffffff !important; /* Paksa teks putih */
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section { 
+  min-height: 100vh; 
+  display: flex; 
+  align-items: center; 
+}
+
+/* ========================================= */
+/* CARD STYLING                              */
+/* ========================================= */
+.card {
+  background: #1e2229 !important; /* Paksa warna kartu premium dark */
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid #2d333b;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+/* CARD 1 ANIMASI MELAR */
+.bio-container {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-profile.expand .bio-container { 
+  grid-template-rows: 1fr; 
+}
+
+.bio-wrapper { 
+  min-height: 0; 
+  overflow: hidden; 
+}
+
+.bio { 
+  padding-top: 20px; 
+  color: #cbd5e1 !important; 
+  font-size: 14px; 
+}
+
+.top { 
+  display: flex; 
+  align-items: center; 
+  gap: 20px; 
+}
+
+.profile { 
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  border: 2px solid #30363d; 
+}
+
+.right h1 { 
+  font-size: 28px; 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+  color: #ffffff !important;
+  white-space: nowrap;
+}
+
+.verif { 
+  width: 22px; 
+}
+
+.welcome-text { 
+  color: #94a3b8 !important; 
+  font-size: 14px; 
+  margin-top: 4px; 
+}
+
+/* ========================================= */
+/* MOBILE RESPONSIVE (STYLES.CSS)            */
+/* ========================================= */
+@media (max-width: 600px) {
+  .right h1 { 
+    font-size: 20px; 
+  }
+  
+  .profile { 
+    width: 80px; 
+    height: 80px; 
+  }
+  
+  .verif { 
+    width: 18px; 
+  }
+  
+  .container {
+    padding: 20px 15px;
+    gap: 15px;
+  }
+}
